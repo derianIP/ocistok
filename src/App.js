@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Home } from "pages";
+import "assets/scss/style.scss";
+import { useEffect } from "react";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  useEffect(() => {
+    loadJquery();
+    loadJs();
+  }, []);
+
+  const loadJs = () => {
+    const script = document.createElement("script");
+    script.src = "/bootstrap.bundle.min.js";
+    script.async = false;
+    document.body.appendChild(script);
+  };
+
+  const loadJquery = () => {
+    const script = document.createElement("script");
+    script.src = "/jquery-3.6.0.min.js";
+    script.async = false;
+    document.body.appendChild(script);
+  };
+  return <Home />;
 }
 
 export default App;

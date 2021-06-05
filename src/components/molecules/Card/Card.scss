@@ -1,0 +1,17 @@
+.card {
+  border-radius: 15px !important;
+
+  figcaption {
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+  }
+
+  img {
+    border-radius: 15px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 203px;
+  }
+}
